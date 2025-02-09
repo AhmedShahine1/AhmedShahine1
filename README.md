@@ -45,14 +45,6 @@ Always eager to explore **new technologies**, improve **software design**, and m
 
 ---
 
-## 📌 Projects  
-
-🔹 **[Car Management System](#)** - ASP.NET Core MVC app for managing cars, offers, and configurations.  
-🔹 **[Team & Tag Management](#)** - Angular app with an ASP.NET Core backend for managing teams and tags.  
-🔹 **[Lawyer Management System](#)** - Admin panel to manage lawyer accounts and statuses.  
-
----
-
 ## 📈 GitHub Stats  
 
 <table>
