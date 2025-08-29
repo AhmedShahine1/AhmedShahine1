@@ -1,75 +1,51 @@
-## Hey 👋, I'm Ahmed Shahine!  
+# 👋 Ahmed Shahine  
 
-🚀 **.NET Full Stack Developer (Backend-Focused)** | 💡 Passionate about Scalable Web Applications  
-
-<a href="https://github.com/AhmedShahine1" target="_blank">
-<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github />
-</a>
-<a href="https://twitter.com/Ahmed_Shahine_" target="_blank">
-<img src=https://img.shields.io/badge/twitter-%2300acee.svg?&style=for-the-badge&logo=twitter&logoColor=white alt=twitter />
-</a>
-<a href="https://linkedin.com/in/ahmed-hani-804120205" target="_blank">
-<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin />
-</a>
-<a href="https://www.facebook.com/profile.php?id=100004423426771" target="_blank">
-<img src=https://img.shields.io/badge/facebook-%232E87FB.svg?&style=for-the-badge&logo=facebook&logoColor=white alt=facebook />
-</a>
-<a href="https://instagram.com/ahmedshahin44" target="_blank">
-<img src=https://img.shields.io/badge/instagram-%23000000.svg?&style=for-the-badge&logo=instagram&logoColor=white alt=instagram />
-</a>  
+**Full Stack .NET Developer (Backend-Focused)**  
+📍 Cairo, Egypt | 💻 Remote & On-site | ⚡ 2+ Years Experience  
 
 ---
 
-### 👨‍💻 About Me  
+## 🧑‍💻 About Me  
+I’m a results-driven **.NET Developer** with proven experience in:  
+- Designing and developing **scalable web applications** using **ASP.NET Core & Angular**  
+- Implementing **REST APIs**, **modular monolith architectures**, and **real-time features (SignalR)**  
+- Optimizing relational databases (**SQL Server, PostgreSQL**) for performance and reliability  
+- Delivering clean, maintainable, and production-ready code  
 
-I’m a **.NET Full Stack Developer** with expertise in building **scalable and efficient web applications**.  
-Focused on **backend development** with **ASP.NET Core, EF Core, PostgreSQL, and SQL Server**, while also experienced with **Angular** for front-end.  
-
-🔹 Strong background in **monolithic & modular monolith architectures**  
-🔹 Skilled in **real-time communication (SignalR)** and **RESTful APIs**  
-🔹 Passionate about writing **clean, maintainable code** and exploring **cloud & microservices**  
-
----
-
-## 🚀 Tech Stack  
-
-### 🔹 Backend  
-- **ASP.NET Core**, **C#**, **Entity Framework**, **REST APIs**  
-- **SQL Server**, **PostgreSQL**, **Dapper**  
-- **SignalR**, **Authentication & Authorization (JWT/OAuth)**  
-
-### 🔹 Frontend  
-- **Angular**, **TypeScript**, **RxJS**, **Bootstrap**  
-
-### 🔹 Tools & DevOps  
-- **Git/GitHub**, **CI/CD basics**, **IIS Deployment**  
-- Currently exploring **Azure**, **Docker**, and **Microservices**  
+Currently working on **facility management systems** and contributing to full-stack solutions that improve business operations.  
 
 ---
 
-## 📈 GitHub Stats  
+## ⚙️ Core Skills  
 
-<table>
-<tr>
-<td valign="top" width="50%">
-<img src="https://github-readme-stats.vercel.app/api?username=AhmedShahine1&show_icons=true&count_private=true&hide_border=true" align="left" style="width: 100%" />
-</td>
-<td valign="top" width="50%">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhmedShahine1&hide_border=true&layout=compact" align="left" style="width: 100%" />
-</td>
-</tr>
-</table>  
+- **Languages & Frameworks:** C#, ASP.NET Core, Entity Framework, Angular, TypeScript  
+- **Databases:** SQL Server, PostgreSQL  
+- **Architecture & Patterns:** Modular Monolith, Clean Architecture, OOP, SOLID  
+- **Tools & DevOps:** Git/GitHub, Docker, CI/CD, IIS, Azure (basic)  
+- **Other:** SignalR (real-time), Payment Gateway Integration, Unit Testing (xUnit)  
 
 ---
 
-![Profile views counter](https://komarev.com/ghpvc/?username=AhmedShahine1&&style=flat-square)  
+## 🚀 Selected Projects  
+
+🔹 **CAFM-IMS (Facility Management System)**  
+Full-stack solution for asset tracking, maintenance scheduling, and analytics.  
+*Tech:* ASP.NET Core API, Angular, EF Core, SQL Server, SignalR  
+
+🔹 **Real-Time Communication Module**  
+Developed live chat & audio features with SignalR, boosting user engagement by 22%.  
+*Tech:* .NET Core, SignalR, WebSockets, Angular  
+
+🔹 **E-Commerce APIs**  
+Implemented secure payment integration and optimized queries, reducing failures by 15%.  
+*Tech:* .NET Core, REST APIs, EF Core, SQL Server  
 
 ---
 
-## 📫 Let's Connect  
+## 📫 Connect  
 
-💼 **[LinkedIn](https://linkedin.com/in/ahmed-hani-804120205)**  
-🐦 **[Twitter](https://twitter.com/Ahmed_Shahine_)**  
-📧 **ahmed.shahine.h@gmail.com**  
+- 📧 Email: **ahmed.shahine.h@gmail.com**  
+- 💼 LinkedIn: [Ahmed Shahine](https://linkedin.com/in/ahmed-hani-804120205)  
+- 🌍 GitHub: [AhmedShahine1](https://github.com/AhmedShahine1)  
 
-🚀 **Feel free to explore my repositories and collaborate!**  
+---
