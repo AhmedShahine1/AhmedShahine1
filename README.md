@@ -1,6 +1,6 @@
 ## Hey 👋, I'm Ahmed Shahine!  
 
-🚀 **Senior .NET & Angular Developer** | 💡 Passionate about Scalable Web Applications  
+🚀 **.NET Full Stack Developer (Backend-Focused)** | 💡 Passionate about Scalable Web Applications  
 
 <a href="https://github.com/AhmedShahine1" target="_blank">
 <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github />
@@ -22,11 +22,12 @@
 
 ### 👨‍💻 About Me  
 
-I’m a **Senior .NET & Angular Developer** with expertise in building **scalable and efficient web applications**.  
-I specialize in **ASP.NET Core**, **Angular**, **C#**, **SQL**, and **modern web technologies**.  
+I’m a **.NET Full Stack Developer** with expertise in building **scalable and efficient web applications**.  
+Focused on **backend development** with **ASP.NET Core, EF Core, PostgreSQL, and SQL Server**, while also experienced with **Angular** for front-end.  
 
-I love solving **complex problems**, designing **robust architectures**, and optimizing **performance**.  
-Always eager to explore **new technologies**, improve **software design**, and mentor **junior developers**.  
+🔹 Strong background in **monolithic & modular monolith architectures**  
+🔹 Skilled in **real-time communication (SignalR)** and **RESTful APIs**  
+🔹 Passionate about writing **clean, maintainable code** and exploring **cloud & microservices**  
 
 ---
 
@@ -34,14 +35,15 @@ Always eager to explore **new technologies**, improve **software design**, and m
 
 ### 🔹 Backend  
 - **ASP.NET Core**, **C#**, **Entity Framework**, **REST APIs**  
-- **Microservices**, **CQRS**, **MediatR**, **Clean Architecture**  
-- **SQL Server**, **PostgreSQL**, **MongoDB**  
+- **SQL Server**, **PostgreSQL**, **Dapper**  
+- **SignalR**, **Authentication & Authorization (JWT/OAuth)**  
 
 ### 🔹 Frontend  
-- **Angular**, **TypeScript**, **RxJS**, **Bootstrap**, **AdminLTE**  
+- **Angular**, **TypeScript**, **RxJS**, **Bootstrap**  
 
-### 🔹 DevOps & Tools  
-- **Azure**, **Docker**, **CI/CD**, **Git**, **Jenkins**, **Linux**  
+### 🔹 Tools & DevOps  
+- **Git/GitHub**, **CI/CD basics**, **IIS Deployment**  
+- Currently exploring **Azure**, **Docker**, and **Microservices**  
 
 ---
 
@@ -68,6 +70,6 @@ Always eager to explore **new technologies**, improve **software design**, and m
 
 💼 **[LinkedIn](https://linkedin.com/in/ahmed-hani-804120205)**  
 🐦 **[Twitter](https://twitter.com/Ahmed_Shahine_)**  
-📧 **[Email](#)**  
+📧 **ahmed.shahine.h@gmail.com**  
 
 🚀 **Feel free to explore my repositories and collaborate!**  
