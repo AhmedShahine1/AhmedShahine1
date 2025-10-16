@@ -1,7 +1,7 @@
 # 👋 Ahmed Shahine  
 
 **Full Stack .NET Developer (Backend-Focused)**  
-📍 Cairo, Egypt | 💻 Remote & On-site | ⚡ 2+ Years Experience  
+📍 Cairo, Egypt | 💻 Remote & On-site | ⚡ 3+ Years Experience  
 
 ---
 
