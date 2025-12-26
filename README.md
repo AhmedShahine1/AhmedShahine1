@@ -1,51 +1,91 @@
 # 👋 Ahmed Shahine  
 
-**Full Stack .NET Developer (Backend-Focused)**  
-📍 Cairo, Egypt | 💻 Remote & On-site | ⚡ 3+ Years Experience  
+**Mid-Level .NET Backend Engineer | Clean Architecture | Distributed Systems**  
+📍 Cairo, Egypt | 🌍 Open to Remote & On-site Opportunities  
 
 ---
 
-## 🧑‍💻 About Me  
-I’m a results-driven **.NET Developer** with proven experience in:  
-- Designing and developing **scalable web applications** using **ASP.NET Core & Angular**  
-- Implementing **REST APIs**, **modular monolith architectures**, and **real-time features (SignalR)**  
-- Optimizing relational databases (**SQL Server, PostgreSQL**) for performance and reliability  
-- Delivering clean, maintainable, and production-ready code  
+## 🧠 About Me  
 
-Currently working on **facility management systems** and contributing to full-stack solutions that improve business operations.  
+I’m a **backend-focused .NET engineer** with 3+ years of experience building **scalable, secure, and high-performance systems**.
 
----
+I specialize in:
+- Designing **modular monolith** and **service-oriented architectures**
+- Building **RESTful APIs** with ASP.NET Core following **Clean Architecture & SOLID**
+- Developing **real-time systems** using SignalR
+- Integrating **message brokers (Kafka)** for asynchronous communication
+- Optimizing relational databases for performance and scalability
 
-## ⚙️ Core Skills  
-
-- **Languages & Frameworks:** C#, ASP.NET Core, Entity Framework, Angular, TypeScript  
-- **Databases:** SQL Server, PostgreSQL  
-- **Architecture & Patterns:** Modular Monolith, Clean Architecture, OOP, SOLID  
-- **Tools & DevOps:** Git/GitHub, Docker, CI/CD, IIS, Azure (basic)  
-- **Other:** SignalR (real-time), Payment Gateway Integration, Unit Testing (xUnit)  
+I’ve worked on **production systems** in fintech, POS, and facility management domains.
 
 ---
 
-## 🚀 Selected Projects  
+## 🛠 Technical Stack  
 
-🔹 **CAFM-IMS (Facility Management System)**  
-Full-stack solution for asset tracking, maintenance scheduling, and analytics.  
-*Tech:* ASP.NET Core API, Angular, EF Core, SQL Server, SignalR  
+**Backend:**  
+- C#, ASP.NET Core (API, MVC)  
+- Entity Framework Core, Dapper  
+- SignalR, Hangfire, Redis  
+- Kafka (event-driven communication)  
 
-🔹 **Real-Time Communication Module**  
-Developed live chat & audio features with SignalR, boosting user engagement by 22%.  
-*Tech:* .NET Core, SignalR, WebSockets, Angular  
+**Frontend:**  
+- Angular, TypeScript, HTML, CSS  
 
-🔹 **E-Commerce APIs**  
-Implemented secure payment integration and optimized queries, reducing failures by 15%.  
-*Tech:* .NET Core, REST APIs, EF Core, SQL Server  
+**Databases:**  
+- SQL Server, PostgreSQL  
+
+**Architecture & Practices:**  
+- Clean Architecture, SOLID, Design Patterns  
+- Modular Monolith  
+- REST API Design  
+- Basic Microservices Concepts  
+
+**DevOps & Tools:**  
+- Git, GitHub  
+- Docker & Docker Compose  
+- CI/CD Pipelines  
+- IIS, Azure (basic)  
 
 ---
 
-## 📫 Connect  
+## 🚀 Highlighted Projects  
+
+### 🔹 CAFM-IMS (Facility & Asset Management System)  
+A production-grade system for managing assets, maintenance workflows, and analytics.
+
+**Responsibilities:**  
+- Designed backend architecture using modular monolith principles  
+- Built secure REST APIs with JWT authentication  
+- Implemented real-time notifications with SignalR  
+- Optimized SQL queries for performance  
+
+**Tech Stack:** ASP.NET Core API, EF Core, SQL Server, Angular, SignalR  
+
+---
+
+### 🔹 Real-Time Communication Platform  
+Developed real-time chat and audio communication modules used in production.
+
+**Impact:**  
+- Increased user engagement by **22%**  
+- Improved system responsiveness and reliability  
+
+**Tech Stack:** ASP.NET Core, SignalR, WebSockets, Angular  
+
+---
+
+### 🔹 E-Commerce & Payment APIs  
+Secure and scalable backend services for handling payments and orders.
+
+**Impact:**  
+- Reduced transaction failures by **15%**  
+- Improved API response time via query optimization  
+
+**Tech Stack:** ASP.NET Core, EF Core, SQL Server  
+
+---
+
+## 📫 Contact  
 
 - 📧 Email: **ahmed.shahine.h@gmail.com**  
-- 💼 LinkedIn: [Ahmed Shahine](https://linkedin.com/in/ahmed-hani-804120205)  
-- 🌍 GitHub: [AhmedShahine1](https://github.com/AhmedShahine1)  
-
----
+- 💼 LinkedIn: https://linkedin.com/in/ahmed-hani-804120205  
