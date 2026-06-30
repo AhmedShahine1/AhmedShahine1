@@ -75,16 +75,22 @@ Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure
 
 ---
 
-## GitHub Stats
+## 📈 GitHub Stats  
 
-<div align="center">
+<table>
+<tr>
+<td valign="top" width="50%">
+<img src="https://github-readme-stats.vercel.app/api?username=AhmedShahine1&show_icons=true&count_private=true&hide_border=true" align="left" style="width: 100%" />
+</td>
+<td valign="top" width="50%">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhmedShahine1&hide_border=true&layout=compact" align="left" style="width: 100%" />
+</td>
+</tr>
+</table>  
 
-![Ahmed's GitHub stats](https://github-readme-stats.vercel.app/api?username=AhmedShahine1&show_icons=true&theme=default&hide_border=true&cache_seconds=86400)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmedShahine1&layout=compact&hide_border=true&cache_seconds=86400)
+---
 
-</div>
-
-*Note: this card is served by a free public service that's occasionally rate-limited. If it shows broken images, see the "Fixing the stats card" section below — it's a 10-minute one-time setup that makes it load reliably forever.*
+![Profile views counter](https://komarev.com/ghpvc/?username=AhmedShahine1&&style=flat-square)  
 
 ---
 
