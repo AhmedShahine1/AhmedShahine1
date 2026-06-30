@@ -53,12 +53,14 @@ nav {
   border-bottom: 1px solid var(--line);
 }
 .nav-logo {
-  font-family: var(--mono);
-  font-size: 15px;
-  color: var(--accent2);
-  letter-spacing: -.5px;
+  display: flex;
+  align-items: center;
 }
-.nav-logo span { color: var(--muted); }
+.nav-logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
 .nav-links { display: flex; gap: 28px; }
 .nav-links a {
   color: var(--muted); text-decoration: none;
@@ -777,7 +779,7 @@ footer {
 
 <!-- ═══════ NAVIGATION ═══════ -->
 <nav>
-  <div class="nav-logo">ahmed<span>.</span>dev</div>
+  <div class="nav-logo"><img src="logo.png" alt="Ahmed Shahine Logo"/></div>
   <div class="nav-links">
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
