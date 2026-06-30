@@ -71,7 +71,7 @@ Redesigned a multi-tenant checkout pipeline — 97% latency reduction · Built t
 **Full-Stack .NET Developer** @ OX Tech.co *(Aug 2024 – Apr 2025)*
 Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure gateway integration · Built real-time features with SignalR
 
-→ Full experience and metrics in my [portfolio](https://ahmedshahine1.github.io) and [CV](mailto:ahmed.shahine.h@gmail.com).
+→ Full experience and metrics in my [portfolio](https://ahmedshahine1.github.io).
 
 ---
 
@@ -79,10 +79,12 @@ Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure
 
 <div align="center">
 
-![Ahmed's GitHub stats](https://github-readme-stats.vercel.app/api?username=AhmedShahine1&show_icons=true&theme=default&hide_border=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmedShahine1&layout=compact&hide_border=true)
+![Ahmed's GitHub stats](https://github-readme-stats.vercel.app/api?username=AhmedShahine1&show_icons=true&theme=default&hide_border=true&cache_seconds=86400)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AhmedShahine1&layout=compact&hide_border=true&cache_seconds=86400)
 
 </div>
+
+*Note: this card is served by a free public service that's occasionally rate-limited. If it shows broken images, see the "Fixing the stats card" section below — it's a 10-minute one-time setup that makes it load reliably forever.*
 
 ---
 
@@ -91,3 +93,23 @@ Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure
 🎯 Working toward AZ-900 (Azure Fundamentals) and containerizing my projects with Docker
 📈 Targeting Senior Full-Stack / Backend roles at remote-first, European, and GCC companies
 🤝 Open to connect — feel free to reach out about roles or collaboration
+
+---
+
+<details>
+<summary><b>📌 Fixing the stats card (one-time setup)</b></summary>
+<br/>
+
+The stats card above uses a free public service that's shared by everyone on GitHub, so it sometimes shows rate-limit errors. The project's own maintainers recommend self-hosting it for reliability — here's the official way, no coding required:
+
+1. Go to **[github.com/anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats)**
+2. Click **Fork** (top right) — this copies the project into your own account
+3. In your new fork, go to **Settings → Secrets and variables → Actions**
+4. Create a token at **[github.com/settings/tokens](https://github.com/settings/tokens)** → classic token → select scope `repo` only → Generate
+5. Back in your fork's secrets page, add a new secret named `PAT_1` with that token as the value
+6. Go to the **Vercel** website, sign in with GitHub, import your forked repo, and deploy it (free, ~2 minutes)
+7. Vercel gives you a new URL like `your-fork-name.vercel.app` — replace `github-readme-stats.vercel.app` with that URL in the two image links above
+
+After this, the stats card is yours alone — no shared rate limits, loads instantly every time.
+
+</details>
