@@ -75,22 +75,9 @@ Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure
 
 ---
 
-## 📈 GitHub Stats  
+## Repositories
 
-<table>
-<tr>
-<td valign="top" width="50%">
-<img src="https://github-readme-stats.vercel.app/api?username=AhmedShahine1&show_icons=true&count_private=true&hide_border=true" align="left" style="width: 100%" />
-</td>
-<td valign="top" width="50%">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhmedShahine1&hide_border=true&layout=compact" align="left" style="width: 100%" />
-</td>
-</tr>
-</table>  
-
----
-
-![Profile views counter](https://komarev.com/ghpvc/?username=AhmedShahine1&&style=flat-square)  
+Browse my pinned and recent work directly on [my profile](https://github.com/AhmedShahine1?tab=repositories) — production code, side projects, and experiments in .NET and Angular.
 
 ---
 
@@ -99,23 +86,3 @@ Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure
 🎯 Working toward AZ-900 (Azure Fundamentals) and containerizing my projects with Docker
 📈 Targeting Senior Full-Stack / Backend roles at remote-first, European, and GCC companies
 🤝 Open to connect — feel free to reach out about roles or collaboration
-
----
-
-<details>
-<summary><b>📌 Fixing the stats card (one-time setup)</b></summary>
-<br/>
-
-The stats card above uses a free public service that's shared by everyone on GitHub, so it sometimes shows rate-limit errors. The project's own maintainers recommend self-hosting it for reliability — here's the official way, no coding required:
-
-1. Go to **[github.com/anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats)**
-2. Click **Fork** (top right) — this copies the project into your own account
-3. In your new fork, go to **Settings → Secrets and variables → Actions**
-4. Create a token at **[github.com/settings/tokens](https://github.com/settings/tokens)** → classic token → select scope `repo` only → Generate
-5. Back in your fork's secrets page, add a new secret named `PAT_1` with that token as the value
-6. Go to the **Vercel** website, sign in with GitHub, import your forked repo, and deploy it (free, ~2 minutes)
-7. Vercel gives you a new URL like `your-fork-name.vercel.app` — replace `github-readme-stats.vercel.app` with that URL in the two image links above
-
-After this, the stats card is yours alone — no shared rate limits, loads instantly every time.
-
-</details>
