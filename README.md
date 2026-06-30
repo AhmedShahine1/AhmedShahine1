@@ -75,6 +75,18 @@ Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure
 
 ---
 
+## GitHub Stats
+
+<div align="center">
+
+![GitHub Stats](https://raw.githubusercontent.com/AhmedShahine1/AhmedShahine1/main/github-metrics.svg)
+
+</div>
+
+*Auto-updates daily via GitHub Actions — no third-party service, so it never goes down.*
+
+---
+
 ## Repositories
 
 Browse my pinned and recent work directly on [my profile](https://github.com/AhmedShahine1?tab=repositories) — production code, side projects, and experiments in .NET and Angular.
