@@ -1319,30 +1319,64 @@ function saveData(data) {
 async function syncToGist(data) {
   const { gistId, gistToken } = data;
   if (!gistId || !gistToken) return;
+  // CRITICAL: never upload the token/gistId themselves into the Gist content
+  const { gistId: _omit1, gistToken: _omit2, ...safeData } = data;
   try {
-    await fetch(`https://api.github.com/gists/${gistId}`, {
+    const res = await fetch(`https://api.github.com/gists/${gistId}`, {
       method: 'PATCH',
       headers: {
-        'Authorization': `token ${gistToken}`,
+        'Authorization': `Bearer ${gistToken}`,
+        'Accept': 'application/vnd.github+json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        files: { 'portfolio-data.json': { content: JSON.stringify(data, null, 2) } }
+        files: { 'portfolio-data.json': { content: JSON.stringify(safeData, null, 2) } }
       })
     });
-  } catch(e) { console.warn('Gist sync failed:', e); }
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      showGistError(`Sync failed (${res.status}): ${err.message || 'check token/gist ID'}`);
+      return false;
+    }
+    return true;
+  } catch(e) {
+    showGistError('Sync failed: network error');
+    return false;
+  }
 }
 
 async function loadFromGist(gistId, gistToken) {
   if (!gistId || !gistToken) return null;
   try {
     const res = await fetch(`https://api.github.com/gists/${gistId}`, {
-      headers: { 'Authorization': `token ${gistToken}` }
+      headers: {
+        'Authorization': `Bearer ${gistToken}`,
+        'Accept': 'application/vnd.github+json',
+      }
     });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      showGistError(`Load failed (${res.status}): ${err.message || 'check token/gist ID'}`);
+      return null;
+    }
     const json = await res.json();
     const content = json.files?.['portfolio-data.json']?.content;
+    // Remote content never contains gistId/gistToken (we strip them before upload) — caller re-attaches them
     return content ? JSON.parse(content) : null;
-  } catch { return null; }
+  } catch {
+    showGistError('Load failed: network error');
+    return null;
+  }
+}
+
+function showGistError(msg) {
+  const el = document.getElementById('save-msg');
+  if (el) {
+    el.textContent = '✗ ' + msg;
+    el.style.color = 'var(--red)';
+    setTimeout(() => { el.textContent = ''; el.style.color = ''; }, 6000);
+  }
+  console.warn(msg);
 }
 
 /* ════════════════════════════════════════════════
@@ -1735,14 +1769,23 @@ function loadSettings() {
   document.getElementById('preset-weekend').value = presetToText(data.presetsWeekend || []);
 }
 
-function saveSettings() {
+async function saveSettings() {
   const data = getData();
   data.gistId    = document.getElementById('set-gist-id').value.trim();
   data.gistToken = document.getElementById('set-gist-token').value.trim();
-  saveData(data);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
   const msg = document.getElementById('save-msg');
-  msg.textContent = '✓ Saved and syncing to Gist...';
-  setTimeout(() => { msg.textContent = ''; }, 3000);
+  msg.style.color = '';
+  msg.textContent = 'Checking connection...';
+
+  const ok = await syncToGist(data);
+  if (ok) {
+    msg.style.color = 'var(--green)';
+    msg.textContent = '✓ Saved and synced successfully';
+    setTimeout(() => { msg.textContent = ''; msg.style.color = ''; }, 4000);
+  }
+  // on failure, syncToGist already called showGistError with the real reason
 }
 
 function savePresets(which) {
