@@ -568,6 +568,22 @@ footer {
   border-color: #10b98130;
   background: #10b98108;
 }
+.task-item.missed {
+  border-color: #ef444440;
+  background: #ef444410;
+}
+.task-item.missed .task-check {
+  border-color: var(--red);
+  color: var(--red);
+  font-weight: 700;
+}
+.task-time {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.task-item.missed .task-time { color: var(--red); }
 .task-check {
   width: 20px; height: 20px;
   border: 1.5px solid var(--subtle);
@@ -1107,6 +1123,7 @@ footer {
           <div class="form-row">
             <input type="text" class="a-input" id="new-task-text" placeholder="Add a task for today..."/>
             <select class="a-select" id="new-task-cat">
+              <option value="Faith">Faith</option>
               <option value="Learning">Learning</option>
               <option value="Project">Project</option>
               <option value="Career">Career</option>
@@ -1114,9 +1131,19 @@ footer {
               <option value="Other">Other</option>
             </select>
           </div>
+          <div class="form-row">
+            <div style="display:flex;align-items:center;gap:6px;flex:1">
+              <span style="font-size:12px;color:var(--muted);font-family:var(--mono)">from</span>
+              <input type="time" class="a-input" id="new-task-start" style="flex:1"/>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;flex:1">
+              <span style="font-size:12px;color:var(--muted);font-family:var(--mono)">to</span>
+              <input type="time" class="a-input" id="new-task-end" style="flex:1"/>
+            </div>
+          </div>
           <div class="form-actions">
             <button class="a-btn a-btn-primary" onclick="addTask()">+ Add Task</button>
-            <button class="a-btn a-btn-ghost" onclick="addPreset()">Load Preset</button>
+            <button class="a-btn a-btn-ghost" onclick="addPreset()">Load Today's Schedule</button>
           </div>
         </div>
 
@@ -1169,17 +1196,30 @@ footer {
           </div>
         </div>
         <div class="settings-group">
-          <div class="settings-label">Preset Tasks</div>
+          <div class="settings-label">Weekday Schedule (Sun – Thu)</div>
           <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">
-            These load when you click "Load Preset" on the Today tab
+            One task per line. Format: <code>Task name | Category | HH:MM | HH:MM</code> (24-hour time, end time optional)
           </div>
-          <textarea class="a-input" id="preset-tasks" rows="6"
-            style="width:100%;resize:vertical;font-family:var(--mono);font-size:12px;line-height:1.6;"
-            placeholder="One task per line..."></textarea>
+          <textarea class="a-input" id="preset-weekday" rows="8"
+            style="width:100%;resize:vertical;font-family:var(--mono);font-size:12px;line-height:1.6;direction:ltr;"
+            placeholder="صلاة الفجر | Faith | 04:00 | 06:00"></textarea>
           <div class="form-actions" style="margin-top:10px;">
-            <button class="a-btn a-btn-primary" onclick="savePresets()">Save Presets</button>
+            <button class="a-btn a-btn-primary" onclick="savePresets('weekday')">Save Weekday Schedule</button>
           </div>
-          <div class="save-msg" id="preset-msg"></div>
+          <div class="save-msg" id="preset-weekday-msg"></div>
+        </div>
+        <div class="settings-group">
+          <div class="settings-label">Weekend Schedule (Fri – Sat)</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">
+            Same format, lighter load
+          </div>
+          <textarea class="a-input" id="preset-weekend" rows="5"
+            style="width:100%;resize:vertical;font-family:var(--mono);font-size:12px;line-height:1.6;direction:ltr;"
+            placeholder="مذاكرة خفيفة | Learning | 10:00 | 11:30"></textarea>
+          <div class="form-actions" style="margin-top:10px;">
+            <button class="a-btn a-btn-primary" onclick="savePresets('weekend')">Save Weekend Schedule</button>
+          </div>
+          <div class="save-msg" id="preset-weekend-msg"></div>
         </div>
         <div class="settings-group">
           <div class="settings-label">Data Management</div>
@@ -1232,14 +1272,26 @@ function defaultData() {
   return {
     gistId: '',
     gistToken: '',
-    presets: [
-      'Study Azure AZ-900 (30 min)',
-      'Practice LeetCode (1 problem)',
-      'Read tech article',
-      'Work on personal project',
-      'Review clean code principles',
-      'English practice (writing)',
-      'Exercise / walk',
+    presetsWeekday: [
+      { text: 'صلاة الفجر', cat: 'Faith', start: '04:00', end: '06:00' },
+      { text: 'ورد من القرآن', cat: 'Faith', start: '06:00', end: '07:00' },
+      { text: 'مذاكرة (صباحاً)', cat: 'Learning', start: '07:00', end: '08:00' },
+      { text: 'تمرين رياضي', cat: 'Exercise', start: '08:00', end: '08:30' },
+      { text: 'فطار', cat: 'Other', start: '08:30', end: '09:30' },
+      { text: 'شغل (الجزء الأول)', cat: 'Career', start: '09:30', end: '11:30' },
+      { text: 'راحة', cat: 'Other', start: '11:30', end: '12:30' },
+      { text: 'شغل (تكملة)', cat: 'Career', start: '12:30', end: '14:00' },
+      { text: 'Meeting', cat: 'Career', start: '14:00', end: '15:00' },
+      { text: 'شغل (الجزء الأخير)', cat: 'Career', start: '15:00', end: '17:00' },
+      { text: 'مذاكرة بعد الشغل', cat: 'Learning', start: '17:00', end: '19:00' },
+      { text: 'وقت شخصي وتخطيط', cat: 'Other', start: '19:00', end: '23:00' },
+    ],
+    presetsWeekend: [
+      { text: 'صلاة الفجر', cat: 'Faith', start: '04:00', end: '06:00' },
+      { text: 'ورد من القرآن', cat: 'Faith', start: '06:00', end: '07:00' },
+      { text: 'مذاكرة خفيفة', cat: 'Learning', start: '10:00', end: '11:30' },
+      { text: 'شغل خفيف / مشروع شخصي', cat: 'Career', start: '12:00', end: '14:00' },
+      { text: 'راحة ووقت شخصي', cat: 'Other', start: '14:00', end: '23:00' },
     ],
     days: {},
     planStart: null,
@@ -1297,6 +1349,10 @@ function openAdminEntry() {
 
 function closeAdmin() {
   document.getElementById('admin-backdrop').classList.remove('open');
+  if (window._missedCheckInterval) {
+    clearInterval(window._missedCheckInterval);
+    window._missedCheckInterval = null;
+  }
 }
 
 function checkPw() {
@@ -1338,6 +1394,12 @@ async function openAdminPanel() {
   document.getElementById('admin-panel').classList.add('open');
   switchTab('today');
   loadSettings();
+
+  // Re-check missed status every 60s while admin is open
+  if (window._missedCheckInterval) clearInterval(window._missedCheckInterval);
+  window._missedCheckInterval = setInterval(() => {
+    if (document.getElementById('tab-today').classList.contains('active')) renderToday();
+  }, 60000);
 }
 
 /* ════════════════════════════════════════════════
@@ -1362,6 +1424,34 @@ function todayKey() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function nowMinutes() {
+  const n = new Date();
+  return n.getHours() * 60 + n.getMinutes();
+}
+
+function timeToMinutes(t) {
+  if (!t) return null;
+  const [h, m] = t.split(':').map(Number);
+  return h * 60 + m;
+}
+
+function fmtTime(t) {
+  if (!t) return '';
+  const [h, m] = t.split(':').map(Number);
+  const period = h >= 12 ? 'PM' : 'AM';
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return `${h12}:${String(m).padStart(2,'0')} ${period}`;
+}
+
+// A task is "missed" if it has an end time, that end time has passed today,
+// and it's still not done.
+function isMissed(task, dayKey) {
+  if (task.done) return false;
+  if (!task.end) return false;
+  if (dayKey !== todayKey()) return dayKey < todayKey(); // past day, has end time, not done = missed
+  return nowMinutes() > timeToMinutes(task.end);
+}
+
 function renderToday() {
   const data = getData();
   const key = todayKey();
@@ -1377,9 +1467,9 @@ function renderToday() {
   });
 
   const done = today.tasks.filter(t => t.done).length;
+  const missed = today.tasks.filter(t => isMissed(t, key)).length;
   const total = today.tasks.length;
-  scoreEl.textContent = `${done} / ${total} ✓`;
-  scoreEl.style.color = total === 0 ? 'var(--muted)' : done === total && total > 0 ? 'var(--green)' : 'var(--text)';
+  scoreEl.innerHTML = `${done}/${total} ✓` + (missed > 0 ? ` <span style="color:var(--red);font-size:14px">· ${missed} missed</span>` : '');
 
   if (today.tasks.length === 0) {
     listEl.innerHTML = `<div style="color:var(--muted);font-size:13px;text-align:center;padding:20px;">
@@ -1387,13 +1477,26 @@ function renderToday() {
     return;
   }
 
+  // Sort by start time if present
+  const sorted = today.tasks.map((t,i) => ({...t, _idx:i})).sort((a,b) => {
+    if (!a.start) return 1;
+    if (!b.start) return -1;
+    return timeToMinutes(a.start) - timeToMinutes(b.start);
+  });
+
   listEl.innerHTML = '';
-  today.tasks.forEach((task, i) => {
+  sorted.forEach((task) => {
+    const i = task._idx;
+    const missedNow = isMissed(task, key);
     const div = document.createElement('div');
-    div.className = 'task-item' + (task.done ? ' done' : '');
+    div.className = 'task-item' + (task.done ? ' done' : '') + (missedNow ? ' missed' : '');
+    const timeStr = task.start ? `${fmtTime(task.start)}${task.end ? ' – ' + fmtTime(task.end) : ''}` : '';
     div.innerHTML = `
-      <div class="task-check">${task.done ? '✓' : ''}</div>
-      <div class="task-text">${esc(task.text)}</div>
+      <div class="task-check">${task.done ? '✓' : missedNow ? '!' : ''}</div>
+      <div style="flex:1">
+        <div class="task-text">${esc(task.text)}</div>
+        ${timeStr ? `<div class="task-time">${timeStr}</div>` : ''}
+      </div>
       <div class="task-cat">${esc(task.cat)}</div>
       <button class="a-btn a-btn-danger" style="flex-shrink:0"
         onclick="event.stopPropagation();deleteTask('${key}',${i})">✕</button>
@@ -1420,24 +1523,36 @@ function deleteTask(dayKey, idx) {
 }
 
 function addTask() {
-  const text = document.getElementById('new-task-text').value.trim();
-  const cat  = document.getElementById('new-task-cat').value;
+  const text  = document.getElementById('new-task-text').value.trim();
+  const cat   = document.getElementById('new-task-cat').value;
+  const start = document.getElementById('new-task-start').value;
+  const end   = document.getElementById('new-task-end').value;
   if (!text) return;
   const data = getData();
   const key = todayKey();
   if (!data.days[key]) data.days[key] = { tasks: [] };
-  data.days[key].tasks.push({ text, cat, done: false });
+  data.days[key].tasks.push({ text, cat, start: start || null, end: end || null, done: false });
   saveData(data);
   document.getElementById('new-task-text').value = '';
+  document.getElementById('new-task-start').value = '';
+  document.getElementById('new-task-end').value = '';
   renderToday();
+}
+
+// Friday = 5, Saturday = 6 in JS getDay()
+function isWeekendDay(dateObj) {
+  const d = dateObj.getDay();
+  return d === 5 || d === 6;
 }
 
 function addPreset() {
   const data = getData();
   const key = todayKey();
   if (!data.days[key]) data.days[key] = { tasks: [] };
-  (data.presets || []).forEach(text => {
-    data.days[key].tasks.push({ text, cat: 'Learning', done: false });
+  const weekend = isWeekendDay(new Date());
+  const list = weekend ? (data.presetsWeekend || []) : (data.presetsWeekday || []);
+  list.forEach(p => {
+    data.days[key].tasks.push({ text: p.text, cat: p.cat, start: p.start || null, end: p.end || null, done: false });
   });
   saveData(data);
   renderToday();
@@ -1509,6 +1624,7 @@ function renderStats() {
   const allDays = Object.entries(data.days);
   const totalTasks = allDays.reduce((s,[,d]) => s + d.tasks.length, 0);
   const totalDone  = allDays.reduce((s,[,d]) => s + d.tasks.filter(t=>t.done).length, 0);
+  const totalMissed = allDays.reduce((s,[k,d]) => s + d.tasks.filter(t=>isMissed(t,k)).length, 0);
   const activeDays = allDays.filter(([,d]) => d.tasks.length > 0).length;
   const pctOverall = totalTasks > 0 ? Math.round(totalDone/totalTasks*100) : 0;
 
@@ -1542,6 +1658,10 @@ function renderStats() {
     <div class="stat-card">
       <div class="stat-val">${totalDone}<span style="font-size:16px;color:var(--muted)">/${totalTasks}</span></div>
       <div class="stat-label">Total tasks completed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:${totalMissed > 0 ? 'var(--red)' : 'var(--muted)'}">${totalMissed}</div>
+      <div class="stat-label">Tasks missed (overdue)</div>
     </div>
   `;
 
@@ -1581,11 +1701,28 @@ function renderStats() {
 /* ════════════════════════════════════════════════
    SETTINGS
 ════════════════════════════════════════════════ */
+function presetToText(preset) {
+  return preset.map(p => `${p.text} | ${p.cat} | ${p.start || ''} | ${p.end || ''}`).join('\n');
+}
+
+function textToPreset(raw) {
+  return raw.split('\n').map(l => l.trim()).filter(Boolean).map(line => {
+    const parts = line.split('|').map(p => p.trim());
+    return {
+      text: parts[0] || '',
+      cat: parts[1] || 'Other',
+      start: parts[2] || null,
+      end: parts[3] || null,
+    };
+  }).filter(p => p.text);
+}
+
 function loadSettings() {
   const data = getData();
   document.getElementById('set-gist-id').value = data.gistId || '';
   document.getElementById('set-gist-token').value = data.gistToken || '';
-  document.getElementById('preset-tasks').value = (data.presets||[]).join('\n');
+  document.getElementById('preset-weekday').value = presetToText(data.presetsWeekday || []);
+  document.getElementById('preset-weekend').value = presetToText(data.presetsWeekend || []);
 }
 
 function saveSettings() {
@@ -1598,13 +1735,16 @@ function saveSettings() {
   setTimeout(() => { msg.textContent = ''; }, 3000);
 }
 
-function savePresets() {
+function savePresets(which) {
   const data = getData();
-  const raw = document.getElementById('preset-tasks').value;
-  data.presets = raw.split('\n').map(l=>l.trim()).filter(Boolean);
+  const elId = which === 'weekday' ? 'preset-weekday' : 'preset-weekend';
+  const raw = document.getElementById(elId).value;
+  const parsed = textToPreset(raw);
+  if (which === 'weekday') data.presetsWeekday = parsed;
+  else data.presetsWeekend = parsed;
   saveData(data);
-  const msg = document.getElementById('preset-msg');
-  msg.textContent = '✓ Presets saved';
+  const msg = document.getElementById(elId + '-msg');
+  msg.textContent = '✓ Saved';
   setTimeout(() => { msg.textContent = ''; }, 2000);
 }
 
