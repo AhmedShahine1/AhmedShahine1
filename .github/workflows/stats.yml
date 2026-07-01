@@ -16,65 +16,193 @@ jobs:
 
       - name: Generate Stats SVG
         env:
-          USERNAME: AhmedShahine1
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 << 'EOF'
           import urllib.request, json, os
 
-          username = os.environ['USERNAME']
           token = os.environ['GH_TOKEN']
+          username = "AhmedShahine1"
 
-          def fetch(url):
-              req = urllib.request.Request(url, headers={
-                  'Authorization': f'token {token}',
-                  'User-Agent': 'Mozilla/5.0'
-              })
+          def graphql(query, variables={}):
+              data = json.dumps({"query": query, "variables": variables}).encode()
+              req = urllib.request.Request(
+                  "https://api.github.com/graphql",
+                  data=data,
+                  headers={
+                      "Authorization": f"Bearer {token}",
+                      "Content-Type": "application/json",
+                      "User-Agent": "stats-action"
+                  }
+              )
               with urllib.request.urlopen(req) as r:
                   return json.loads(r.read())
 
-          # Fetch user data
-          user = fetch(f'https://api.github.com/users/{username}')
-          repos = fetch(f'https://api.github.com/users/{username}/repos?per_page=100&type=owner')
+          # ── Main user stats query ──────────────────────────────
+          result = graphql("""
+          query($login: String!) {
+            user(login: $login) {
+              name
+              followers { totalCount }
+              following  { totalCount }
+              repositories(ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], isFork: false, first: 100) {
+                totalCount
+                nodes {
+                  stargazerCount
+                  forkCount
+                  primaryLanguage { name }
+                }
+              }
+              contributionsCollection {
+                totalCommitContributions
+                totalPullRequestContributions
+                totalPullRequestReviewContributions
+                totalIssueContributions
+                contributionCalendar {
+                  totalContributions
+                }
+              }
+              pullRequests(states: [OPEN, MERGED, CLOSED]) { totalCount }
+              issues(states: [OPEN, CLOSED]) { totalCount }
+            }
+          }
+          """, {"login": username})
 
-          stars = sum(r['stargazers_count'] for r in repos)
-          forks = sum(r['forks_count'] for r in repos)
-          public_repos = user['public_repos']
-          followers = user['followers']
+          u = result["data"]["user"]
+          cc = u["contributionsCollection"]
+          repos = u["repositories"]["nodes"]
 
-          # Fetch commit count via search
-          commits_data = fetch(f'https://api.github.com/search/commits?q=author:{username}&per_page=1')
-          commits = commits_data.get('total_count', 0)
+          # ── Calculate values ──────────────────────────────────
+          total_stars  = sum(r["stargazerCount"] for r in repos)
+          total_forks  = sum(r["forkCount"]       for r in repos)
+          total_repos  = u["repositories"]["totalCount"]
+          followers    = u["followers"]["totalCount"]
+          commits      = cc["totalCommitContributions"]
+          prs          = cc["totalPullRequestContributions"]
+          reviews      = cc["totalPullRequestReviewContributions"]
+          issues       = cc["totalIssueContributions"]
+          total_contribs = cc["contributionCalendar"]["totalContributions"]
+          all_prs      = u["pullRequests"]["totalCount"]
 
-          svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195">
-            <style>
-              .title {{ font: 600 18px 'Segoe UI', sans-serif; fill: #e2e8f0; }}
-              .label {{ font: 400 14px 'Segoe UI', sans-serif; fill: #94a3b8; }}
-              .value {{ font: 600 14px 'Segoe UI', sans-serif; fill: #e2e8f0; }}
-              .icon  {{ fill: #3b82f6; }}
-            </style>
-            <rect width="495" height="195" rx="10" fill="#111827" stroke="#1e2d45" stroke-width="1"/>
-            <text x="25" y="35" class="title">Ahmed Shahine's GitHub Stats</text>
-            <!-- Row 1 -->
-            <text x="25"  y="80"  class="label">⭐ Stars Earned</text>
-            <text x="250" y="80"  class="value">{stars}</text>
-            <text x="290" y="80"  class="label">📦 Public Repos</text>
-            <text x="450" y="80"  class="value">{public_repos}</text>
-            <!-- Row 2 -->
-            <text x="25"  y="115" class="label">🔀 Total Forks</text>
-            <text x="250" y="115" class="value">{forks}</text>
-            <text x="290" y="115" class="label">👥 Followers</text>
-            <text x="450" y="115" class="value">{followers}</text>
-            <!-- Row 3 -->
-            <text x="25"  y="150" class="label">💻 Total Commits</text>
-            <text x="250" y="150" class="value">{commits:,}</text>
-            <!-- Footer -->
-            <text x="25" y="182" font-size="11" fill="#475569">Auto-updated daily · github.com/{username}</text>
+          # Language breakdown
+          lang_count = {}
+          for r in repos:
+              if r["primaryLanguage"]:
+                  lang = r["primaryLanguage"]["name"]
+                  lang_count[lang] = lang_count.get(lang, 0) + 1
+          top_langs = sorted(lang_count.items(), key=lambda x: -x[1])[:4]
+
+          print(f"stars={total_stars}, repos={total_repos}, commits={commits}")
+          print(f"prs={prs}, reviews={reviews}, issues={issues}")
+          print(f"total_contribs={total_contribs}, followers={followers}")
+
+          # ── Language colors ───────────────────────────────────
+          COLORS = {
+              "C#": "#178600", "TypeScript": "#3178c6", "JavaScript": "#f1e05a",
+              "Python": "#3572A5", "HTML": "#e34c26", "CSS": "#563d7c",
+              "Java": "#b07219", "Go": "#00ADD8", "Rust": "#dea584",
+              "Other": "#8b949e"
+          }
+
+          def lang_color(name):
+              return COLORS.get(name, "#8b949e")
+
+          # ── Build stat rows ───────────────────────────────────
+          rows = [
+              ("⭐", "Stars Earned",      f"{total_stars:,}"),
+              ("💻", "Total Commits",     f"{commits:,}"),
+              ("🔀", "Pull Requests",     f"{all_prs:,}"),
+              ("👀", "Code Reviews",      f"{reviews:,}"),
+              ("🐛", "Issues",            f"{issues:,}"),
+              ("📦", "Repositories",      f"{total_repos:,}"),
+              ("🔥", "Contributions/yr",  f"{total_contribs:,}"),
+              ("👥", "Followers",         f"{followers:,}"),
+          ]
+
+          # Layout: 2 columns, 4 rows
+          col1 = rows[:4]
+          col2 = rows[4:]
+
+          def stat_block(icon, label, value, x, y):
+              return f"""
+                <text x="{x}" y="{y}"      font-size="13" fill="#64748b">{icon} {label}</text>
+                <text x="{x}" y="{y + 20}" font-size="15" font-weight="600" fill="#e2e8f0">{value}</text>"""
+
+          stats_svg = ""
+          for i, (icon, label, value) in enumerate(col1):
+              stats_svg += stat_block(icon, label, value, 30, 90 + i * 52)
+          for i, (icon, label, value) in enumerate(col2):
+              stats_svg += stat_block(icon, label, value, 268, 90 + i * 52)
+
+          # ── Language bar ──────────────────────────────────────
+          lang_total = sum(c for _, c in top_langs) or 1
+          lang_bar = ""
+          lang_labels = ""
+          bar_x = 30
+          bar_width = 435
+
+          for idx, (lang, count) in enumerate(top_langs):
+              pct = count / lang_total
+              w = int(pct * bar_width)
+              color = lang_color(lang)
+              rx = "6 0 0 6" if idx == 0 else ("0 6 6 0" if idx == len(top_langs) - 1 else "0")
+              lang_bar += f'<rect x="{bar_x}" y="0" width="{w}" height="10" fill="{color}" rx="{rx}"/>'
+              lang_labels += f"""
+                <circle cx="{30 + idx * 115}" cy="357" r="5" fill="{color}"/>
+                <text x="{42 + idx * 115}" y="362" font-size="12" fill="#94a3b8">{lang} {pct*100:.0f}%</text>"""
+              bar_x += w
+
+          # ── Full SVG ──────────────────────────────────────────
+          svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="495" height="390" viewBox="0 0 495 390">
+            <defs>
+              <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%"   stop-color="#0f172a"/>
+                <stop offset="100%" stop-color="#111827"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Background -->
+            <rect width="495" height="390" rx="12" fill="url(#bg)" stroke="#1e2d45" stroke-width="1.5"/>
+
+            <!-- Title -->
+            <text x="30" y="42" font-size="17" font-weight="700" fill="#e2e8f0" font-family="'Segoe UI',sans-serif">
+              Ahmed Shahine's GitHub Stats
+            </text>
+            <text x="30" y="62" font-size="12" fill="#475569" font-family="'Segoe UI',sans-serif">
+              @{username} · Updated daily
+            </text>
+
+            <!-- Divider -->
+            <line x1="30" y1="72" x2="465" y2="72" stroke="#1e2d45" stroke-width="1"/>
+
+            <!-- Stats grid -->
+            <g font-family="'Segoe UI',sans-serif">
+              {stats_svg}
+            </g>
+
+            <!-- Divider 2 -->
+            <line x1="30" y1="310" x2="465" y2="310" stroke="#1e2d45" stroke-width="1"/>
+
+            <!-- Languages title -->
+            <text x="30" y="333" font-size="13" fill="#64748b" font-family="'Segoe UI',sans-serif">
+              Most Used Languages
+            </text>
+
+            <!-- Language bar -->
+            <g transform="translate(30, 340)">
+              <rect width="435" height="10" rx="6" fill="#1e2d45"/>
+              {lang_bar}
+            </g>
+
+            <!-- Language labels -->
+            {lang_labels}
+
           </svg>"""
 
-          with open('github-metrics.svg', 'w') as f:
+          with open("github-metrics.svg", "w", encoding="utf-8") as f:
               f.write(svg)
-          print(f"Done: stars={stars}, repos={public_repos}, commits={commits}")
+
+          print("SVG generated successfully.")
           EOF
 
       - name: Commit SVG
@@ -82,5 +210,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add github-metrics.svg
-          git diff --cached --quiet || git commit -m "Update GitHub stats SVG"
+          git diff --cached --quiet || git commit -m "chore: update GitHub stats [skip ci]"
           git push
