@@ -79,11 +79,11 @@ Served 20,000+ MAU at 99%+ uptime · Reduced payment failure rate 15% via secure
 
 <div align="center">
 
+![Profile Views](https://komarev.com/ghpvc/?username=AhmedShahine1&style=flat-square&color=3b82f6&label=Profile+Views)
+
 ![GitHub Stats](https://raw.githubusercontent.com/AhmedShahine1/AhmedShahine1/main/github-metrics.svg)
 
 </div>
-
-*Auto-updates daily via GitHub Actions — no third-party service, so it never goes down.*
 
 ---
 
