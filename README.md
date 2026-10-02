@@ -4,6 +4,10 @@
 
 ### Backend-Focused Full-Stack .NET Engineer
 
+**Production Systems · Architecture · Performance · Data**
+
+[Portfolio](https://ahmedshahine1.github.io) · [Resume](https://ahmedshahine1.github.io/resume.html) · [LinkedIn](https://linkedin.com/in/ahmed-hani-804120205)
+
 **Production systems · Architecture · Performance · Data · Product Engineering**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ahmedshahine1.github.io)
@@ -14,7 +18,7 @@
 
 ---
 
-## About Me
+## `01` Profile
 
 I'm a software engineer specializing in **ASP.NET Core, Angular, SQL Server, and multi-tenant SaaS systems**. I enjoy working on products where backend architecture, frontend experience, data design, performance, and business workflows all matter.
 
@@ -24,76 +28,80 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ---
 
-## Engineering Impact
+## `02` Production Impact
 
-| Area | Result |
-|---|---:|
-| Checkout pipeline performance | **60s → under 2s** |
-| p95 API latency | **45% reduction** under 3× peak load |
-| Production scale | **20,000+ monthly active users** |
-| Reliability | **99%+ uptime** |
-| Delivery quality | **35% fewer post-release bugs** through stronger architecture standards |
-
----
-
-## Engineering Stack
-
-### Backend
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Entity Framework Core](https://img.shields.io/badge/EF_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Dapper](https://img.shields.io/badge/Dapper-1F2937?style=flat-square)
-![SignalR](https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-
-### Frontend
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=flat-square&logo=reactivex&logoColor=white)
-![NgRx](https://img.shields.io/badge/NgRx-BA2BD2?style=flat-square)
-
-### Data & Infrastructure
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+<table>
+<tr>
+<td align="center"><b>~60s → &lt;2s</b><br><sub>checkout pipeline</sub></td>
+<td align="center"><b>−45%</b><br><sub>p95 API latency</sub></td>
+<td align="center"><b>3×</b><br><sub>concurrent load</sub></td>
+</tr>
+<tr>
+<td align="center"><b>20k+</b><br><sub>monthly active users</sub></td>
+<td align="center"><b>99%+</b><br><sub>uptime</sub></td>
+<td align="center"><b>−35%</b><br><sub>post-release bugs</sub></td>
+</tr>
+</table>
 
 ---
 
-## What I Work On
+## `03` Engineering Stack
 
-- **Enterprise SaaS** — tenant isolation, configuration, auditability, permissions, and operational workflows.
-- **Backend architecture** — modular monoliths, Clean Architecture, CQRS, service/repository boundaries, EF Core and Dapper.
-- **Performance engineering** — query tuning, indexing, batching, caching, and latency reduction.
-- **Real-time systems** — SignalR, notifications, event-driven workflows, and background processing.
-- **Frontend engineering** — Angular, RxJS, NgRx, reusable UI architecture, state management, and responsive enterprise UX.
-- **AI engineering** — building toward practical ML/AI systems that integrate cleanly with production software.
+| Layer | Technologies |
+|---|---|
+| **Backend** | C# · ASP.NET Core · EF Core · Dapper · MediatR · SignalR |
+| **Architecture** | Clean Architecture · CQRS · Modular Design · Multi-tenant SaaS |
+| **Data & Messaging** | SQL Server · Query Tuning · Indexing · Redis · RabbitMQ |
+| **Frontend** | Angular 15–18 · TypeScript · RxJS · NgRx · Blazor Server |
+| **Delivery** | AWS S3 · Firebase · Docker · GitHub Actions · CI/CD · Unit Testing |
 
----
+<details>
+<summary><b>Technology badges</b></summary>
+<br>
 
-## Engineering Case Studies
+![C#](https://img.shields.io/badge/C%23-111827?style=flat-square&logo=csharp&logoColor=38BDF8)
+![.NET](https://img.shields.io/badge/.NET-111827?style=flat-square&logo=dotnet&logoColor=38BDF8)
+![Angular](https://img.shields.io/badge/Angular-111827?style=flat-square&logo=angular&logoColor=38BDF8)
+![TypeScript](https://img.shields.io/badge/TypeScript-111827?style=flat-square&logo=typescript&logoColor=38BDF8)
+![SQL Server](https://img.shields.io/badge/SQL_Server-111827?style=flat-square&logo=microsoftsqlserver&logoColor=38BDF8)
+![Redis](https://img.shields.io/badge/Redis-111827?style=flat-square&logo=redis&logoColor=38BDF8)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-111827?style=flat-square&logo=rabbitmq&logoColor=38BDF8)
+![Docker](https://img.shields.io/badge/Docker-111827?style=flat-square&logo=docker&logoColor=38BDF8)
 
-### Enterprise CAFM Platform
-End-to-end engineering across operational workflows including assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
-
-### Direct-to-S3 Document Management
-Designed the upload flow as: **Angular → .NET metadata validation → pre-signed URL → direct S3 upload → confirm + persist**. This reduces unnecessary application-server load while keeping authorization and metadata rules in the backend.
-
-### Multi-Tenant Performance Engineering
-Redesigned a high-cost checkout path using async refactoring, Redis caching, and query batching: **~60 seconds → under 2 seconds**, alongside tenant-isolated audit logging through MediatR pipeline behaviors.
-
-## Public Repositories
-
-- **[Maintainify](https://github.com/AhmedShahine1/Maintainify)** — public project available for direct code review.
-- **[Backend Developer Assessment](https://github.com/AhmedShahine1/BackEndDevTest)** — ASP.NET Core, EF Core, SQL Server, SignalR, transactions, Angular, and real-time workflows.
-- **[System Design Resources](https://github.com/AhmedShahine1/system-design-resources)** — architecture and system-design reference collection.
-
-> Most of my strongest production work belongs to employer/private repositories. The case studies above describe the engineering problems and outcomes without exposing proprietary source code.
+</details>
 
 ---
 
-## Professional Experience
+## `04` Engineering Stories
+
+### Document Management · Direct-to-S3
+**Angular → .NET validation → pre-signed URL → S3 → confirm + persist**
+
+Large files upload directly to S3 while the backend keeps authorization, metadata rules, and lifecycle control.
+
+### Multi-Tenant Performance
+**~60 seconds → under 2 seconds**
+
+Async refactoring · Redis caching · SQL/query batching · tenant-isolated audit logging with MediatR pipeline behaviors.
+
+### Enterprise CAFM
+End-to-end work across assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
+
+---
+
+## `05` Public Code
+
+| Repository | Focus |
+|---|---|
+| **[Maintainify ↗](https://github.com/AhmedShahine1/Maintainify)** | Public project available for direct source review |
+| **[Backend Assessment ↗](https://github.com/AhmedShahine1/BackEndDevTest)** | .NET · EF Core · SQL Server · SignalR · Angular |
+| **[System Design ↗](https://github.com/AhmedShahine1/system-design-resources)** | Architecture and system-design resources |
+
+> Most production work belongs to employer/private repositories. The stories above describe the engineering without exposing proprietary source code.
+
+---
+
+## `06` Experience
 
 **Full-Stack .NET Developer — CAFM-IMS**  
 *Jan 2025 – Present*
@@ -118,7 +126,7 @@ Redesigned a high-cost checkout path using async refactoring, Redis caching, and
 
 ---
 
-## Engineering Principles
+## `07` Engineering Principles
 
 > **Design for change. Measure performance. Protect boundaries. Keep business rules explicit.**
 
@@ -132,7 +140,7 @@ I prefer systems that are:
 
 ---
 
-## Current Focus
+## `08` Current Direction
 
 - Deepening **backend architecture, distributed systems, databases, cloud, and system design**.
 - Developing a second specialization in **Machine Learning / AI Engineering**.
