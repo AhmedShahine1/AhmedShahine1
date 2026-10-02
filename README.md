@@ -4,6 +4,8 @@
 
 ### Backend-Focused Full-Stack .NET Engineer
 
+Building scalable enterprise systems with **.NET + Angular**, focused on architecture, performance, and real-world impact.
+
 **Production Systems · Architecture · Performance · Data**
 
 [Portfolio](https://ahmedshahine1.github.io) · [Resume](https://ahmedshahine1.github.io/resume.html) · [LinkedIn](https://linkedin.com/in/ahmed-hani-804120205)
@@ -18,7 +20,7 @@
 
 ---
 
-## `01` Profile
+## Profile
 
 I'm a software engineer specializing in **ASP.NET Core, Angular, SQL Server, and multi-tenant SaaS systems**. I enjoy working on products where backend architecture, frontend experience, data design, performance, and business workflows all matter.
 
@@ -28,24 +30,15 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ---
 
-## `02` Production Impact
+## Impact
 
-<table>
-<tr>
-<td align="center"><b>~60s → &lt;2s</b><br><sub>checkout pipeline</sub></td>
-<td align="center"><b>−45%</b><br><sub>p95 API latency</sub></td>
-<td align="center"><b>3×</b><br><sub>concurrent load</sub></td>
-</tr>
-<tr>
-<td align="center"><b>20k+</b><br><sub>monthly active users</sub></td>
-<td align="center"><b>99%+</b><br><sub>uptime</sub></td>
-<td align="center"><b>−35%</b><br><sub>post-release bugs</sub></td>
-</tr>
-</table>
+| **3+ years** | **60s → <2s** | **−45% p95** | **20k+ MAU** | **99%+ uptime** |
+|:---:|:---:|:---:|:---:|:---:|
+| Production engineering | Checkout optimization | API latency | Production scale | Reliability |
 
 ---
 
-## `03` Engineering Stack
+## Tech Stack
 
 | Layer | Technologies |
 |---|---|
@@ -55,53 +48,26 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 | **Frontend** | Angular 15–18 · TypeScript · RxJS · NgRx · Blazor Server |
 | **Delivery** | AWS S3 · Firebase · Docker · GitHub Actions · CI/CD · Unit Testing |
 
-<details>
-<summary><b>Technology badges</b></summary>
-<br>
-
-![C#](https://img.shields.io/badge/C%23-111827?style=flat-square&logo=csharp&logoColor=38BDF8)
-![.NET](https://img.shields.io/badge/.NET-111827?style=flat-square&logo=dotnet&logoColor=38BDF8)
-![Angular](https://img.shields.io/badge/Angular-111827?style=flat-square&logo=angular&logoColor=38BDF8)
-![TypeScript](https://img.shields.io/badge/TypeScript-111827?style=flat-square&logo=typescript&logoColor=38BDF8)
-![SQL Server](https://img.shields.io/badge/SQL_Server-111827?style=flat-square&logo=microsoftsqlserver&logoColor=38BDF8)
-![Redis](https://img.shields.io/badge/Redis-111827?style=flat-square&logo=redis&logoColor=38BDF8)
-![RabbitMQ](https://img.shields.io/badge/RabbitMQ-111827?style=flat-square&logo=rabbitmq&logoColor=38BDF8)
-![Docker](https://img.shields.io/badge/Docker-111827?style=flat-square&logo=docker&logoColor=38BDF8)
-
-</details>
-
 ---
 
-## `04` Engineering Stories
+## Selected Engineering Work
+
+### Enterprise CAFM Platform
+End-to-end engineering across operational modules including assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
 
 ### Document Management · Direct-to-S3
-**Angular → .NET validation → pre-signed URL → S3 → confirm + persist**
+**Angular → .NET validation → pre-signed URL → direct S3 upload → confirm + persist**
 
-Large files upload directly to S3 while the backend keeps authorization, metadata rules, and lifecycle control.
+Large file bytes upload directly to S3 while the backend retains authorization, metadata validation, and lifecycle control.
 
 ### Multi-Tenant Performance
-**~60 seconds → under 2 seconds**
+Redesigned a high-cost B2B checkout path with async refactoring, Redis caching, and query batching.
 
-Async refactoring · Redis caching · SQL/query batching · tenant-isolated audit logging with MediatR pipeline behaviors.
-
-### Enterprise CAFM
-End-to-end work across assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
+**Result:** roughly **60 seconds → under 2 seconds**, with **45% lower p95 latency** while sustaining **3× concurrent load**.
 
 ---
 
-## `05` Public Code
-
-| Repository | Focus |
-|---|---|
-| **[Maintainify ↗](https://github.com/AhmedShahine1/Maintainify)** | Public project available for direct source review |
-| **[Backend Assessment ↗](https://github.com/AhmedShahine1/BackEndDevTest)** | .NET · EF Core · SQL Server · SignalR · Angular |
-| **[System Design ↗](https://github.com/AhmedShahine1/system-design-resources)** | Architecture and system-design resources |
-
-> Most production work belongs to employer/private repositories. The stories above describe the engineering without exposing proprietary source code.
-
----
-
-## `06` Experience
+## Experience
 
 **Full-Stack .NET Developer — CAFM-IMS**  
 *Jan 2025 – Present*
@@ -126,7 +92,7 @@ End-to-end work across assets, PPM, work orders, attendance, access control, pur
 
 ---
 
-## `07` Engineering Principles
+## Engineering Principles
 
 > **Design for change. Measure performance. Protect boundaries. Keep business rules explicit.**
 
@@ -140,7 +106,7 @@ I prefer systems that are:
 
 ---
 
-## `08` Current Direction
+## Education & Growth
 
 - Deepening **backend architecture, distributed systems, databases, cloud, and system design**.
 - Developing a second specialization in **Machine Learning / AI Engineering**.
