@@ -47,26 +47,28 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ## `03` Engineering Stack
 
-### Backend
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Entity Framework Core](https://img.shields.io/badge/EF_Core-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Dapper](https://img.shields.io/badge/Dapper-1F2937?style=flat-square)
-![SignalR](https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+| Layer | Technologies |
+|---|---|
+| **Backend** | C# · ASP.NET Core · EF Core · Dapper · MediatR · SignalR |
+| **Architecture** | Clean Architecture · CQRS · Modular Design · Multi-tenant SaaS |
+| **Data & Messaging** | SQL Server · Query Tuning · Indexing · Redis · RabbitMQ |
+| **Frontend** | Angular 15–18 · TypeScript · RxJS · NgRx · Blazor Server |
+| **Delivery** | AWS S3 · Firebase · Docker · GitHub Actions · CI/CD · Unit Testing |
 
-### Frontend
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=flat-square&logo=reactivex&logoColor=white)
-![NgRx](https://img.shields.io/badge/NgRx-BA2BD2?style=flat-square)
+<details>
+<summary><b>Technology badges</b></summary>
+<br>
 
-### Data & Infrastructure
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-111827?style=flat-square&logo=csharp&logoColor=38BDF8)
+![.NET](https://img.shields.io/badge/.NET-111827?style=flat-square&logo=dotnet&logoColor=38BDF8)
+![Angular](https://img.shields.io/badge/Angular-111827?style=flat-square&logo=angular&logoColor=38BDF8)
+![TypeScript](https://img.shields.io/badge/TypeScript-111827?style=flat-square&logo=typescript&logoColor=38BDF8)
+![SQL Server](https://img.shields.io/badge/SQL_Server-111827?style=flat-square&logo=microsoftsqlserver&logoColor=38BDF8)
+![Redis](https://img.shields.io/badge/Redis-111827?style=flat-square&logo=redis&logoColor=38BDF8)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-111827?style=flat-square&logo=rabbitmq&logoColor=38BDF8)
+![Docker](https://img.shields.io/badge/Docker-111827?style=flat-square&logo=docker&logoColor=38BDF8)
+
+</details>
 
 ---
 
