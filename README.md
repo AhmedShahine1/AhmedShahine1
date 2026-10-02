@@ -72,39 +72,36 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ---
 
-## `04` What I Engineer
+## `04` Engineering Stories
 
-- **Enterprise SaaS** — tenant isolation, configuration, auditability, permissions, and operational workflows.
-- **Backend architecture** — modular monoliths, Clean Architecture, CQRS, service/repository boundaries, EF Core and Dapper.
-- **Performance engineering** — query tuning, indexing, batching, caching, and latency reduction.
-- **Real-time systems** — SignalR, notifications, event-driven workflows, and background processing.
-- **Frontend engineering** — Angular, RxJS, NgRx, reusable UI architecture, state management, and responsive enterprise UX.
-- **AI engineering** — building toward practical ML/AI systems that integrate cleanly with production software.
+### Document Management · Direct-to-S3
+**Angular → .NET validation → pre-signed URL → S3 → confirm + persist**
 
----
+Large files upload directly to S3 while the backend keeps authorization, metadata rules, and lifecycle control.
 
-## `05` Engineering Stories
+### Multi-Tenant Performance
+**~60 seconds → under 2 seconds**
 
-### Enterprise CAFM Platform
-End-to-end engineering across operational workflows including assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
+Async refactoring · Redis caching · SQL/query batching · tenant-isolated audit logging with MediatR pipeline behaviors.
 
-### Direct-to-S3 Document Management
-Designed the upload flow as: **Angular → .NET metadata validation → pre-signed URL → direct S3 upload → confirm + persist**. This reduces unnecessary application-server load while keeping authorization and metadata rules in the backend.
-
-### Multi-Tenant Performance Engineering
-Redesigned a high-cost checkout path using async refactoring, Redis caching, and query batching: **~60 seconds → under 2 seconds**, alongside tenant-isolated audit logging through MediatR pipeline behaviors.
-
-## `06` Public Code
-
-- **[Maintainify](https://github.com/AhmedShahine1/Maintainify)** — public project available for direct code review.
-- **[Backend Developer Assessment](https://github.com/AhmedShahine1/BackEndDevTest)** — ASP.NET Core, EF Core, SQL Server, SignalR, transactions, Angular, and real-time workflows.
-- **[System Design Resources](https://github.com/AhmedShahine1/system-design-resources)** — architecture and system-design reference collection.
-
-> Most of my strongest production work belongs to employer/private repositories. The case studies above describe the engineering problems and outcomes without exposing proprietary source code.
+### Enterprise CAFM
+End-to-end work across assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
 
 ---
 
-## `07` Experience
+## `05` Public Code
+
+| Repository | Focus |
+|---|---|
+| **[Maintainify ↗](https://github.com/AhmedShahine1/Maintainify)** | Public project available for direct source review |
+| **[Backend Assessment ↗](https://github.com/AhmedShahine1/BackEndDevTest)** | .NET · EF Core · SQL Server · SignalR · Angular |
+| **[System Design ↗](https://github.com/AhmedShahine1/system-design-resources)** | Architecture and system-design resources |
+
+> Most production work belongs to employer/private repositories. The stories above describe the engineering without exposing proprietary source code.
+
+---
+
+## `06` Experience
 
 **Full-Stack .NET Developer — CAFM-IMS**  
 *Jan 2025 – Present*
@@ -129,7 +126,7 @@ Redesigned a high-cost checkout path using async refactoring, Redis caching, and
 
 ---
 
-## `08` Engineering Principles
+## `07` Engineering Principles
 
 > **Design for change. Measure performance. Protect boundaries. Keep business rules explicit.**
 
@@ -143,7 +140,7 @@ I prefer systems that are:
 
 ---
 
-## `09` Current Direction
+## `08` Current Direction
 
 - Deepening **backend architecture, distributed systems, databases, cloud, and system design**.
 - Developing a second specialization in **Machine Learning / AI Engineering**.
