@@ -4,6 +4,10 @@
 
 ### Backend-Focused Full-Stack .NET Engineer
 
+**Production Systems · Architecture · Performance · Data**
+
+[Portfolio](https://ahmedshahine1.github.io) · [Resume](https://ahmedshahine1.github.io/resume.html) · [LinkedIn](https://linkedin.com/in/ahmed-hani-804120205)
+
 **Production systems · Architecture · Performance · Data · Product Engineering**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ahmedshahine1.github.io)
@@ -14,7 +18,7 @@
 
 ---
 
-## About Me
+## `01` Profile
 
 I'm a software engineer specializing in **ASP.NET Core, Angular, SQL Server, and multi-tenant SaaS systems**. I enjoy working on products where backend architecture, frontend experience, data design, performance, and business workflows all matter.
 
@@ -24,19 +28,24 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ---
 
-## Engineering Impact
+## `02` Production Impact
 
-| Area | Result |
-|---|---:|
-| Checkout pipeline performance | **60s → under 2s** |
-| p95 API latency | **45% reduction** under 3× peak load |
-| Production scale | **20,000+ monthly active users** |
-| Reliability | **99%+ uptime** |
-| Delivery quality | **35% fewer post-release bugs** through stronger architecture standards |
+<table>
+<tr>
+<td align="center"><b>~60s → &lt;2s</b><br><sub>checkout pipeline</sub></td>
+<td align="center"><b>−45%</b><br><sub>p95 API latency</sub></td>
+<td align="center"><b>3×</b><br><sub>concurrent load</sub></td>
+</tr>
+<tr>
+<td align="center"><b>20k+</b><br><sub>monthly active users</sub></td>
+<td align="center"><b>99%+</b><br><sub>uptime</sub></td>
+<td align="center"><b>−35%</b><br><sub>post-release bugs</sub></td>
+</tr>
+</table>
 
 ---
 
-## Engineering Stack
+## `03` Engineering Stack
 
 ### Backend
 ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
@@ -61,7 +70,7 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ---
 
-## What I Work On
+## `04` What I Engineer
 
 - **Enterprise SaaS** — tenant isolation, configuration, auditability, permissions, and operational workflows.
 - **Backend architecture** — modular monoliths, Clean Architecture, CQRS, service/repository boundaries, EF Core and Dapper.
@@ -72,7 +81,7 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ---
 
-## Engineering Case Studies
+## `05` Engineering Stories
 
 ### Enterprise CAFM Platform
 End-to-end engineering across operational workflows including assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
@@ -83,7 +92,7 @@ Designed the upload flow as: **Angular → .NET metadata validation → pre-sign
 ### Multi-Tenant Performance Engineering
 Redesigned a high-cost checkout path using async refactoring, Redis caching, and query batching: **~60 seconds → under 2 seconds**, alongside tenant-isolated audit logging through MediatR pipeline behaviors.
 
-## Public Repositories
+## `06` Public Code
 
 - **[Maintainify](https://github.com/AhmedShahine1/Maintainify)** — public project available for direct code review.
 - **[Backend Developer Assessment](https://github.com/AhmedShahine1/BackEndDevTest)** — ASP.NET Core, EF Core, SQL Server, SignalR, transactions, Angular, and real-time workflows.
@@ -93,7 +102,7 @@ Redesigned a high-cost checkout path using async refactoring, Redis caching, and
 
 ---
 
-## Professional Experience
+## `07` Experience
 
 **Full-Stack .NET Developer — CAFM-IMS**  
 *Jan 2025 – Present*
@@ -118,7 +127,7 @@ Redesigned a high-cost checkout path using async refactoring, Redis caching, and
 
 ---
 
-## Engineering Principles
+## `08` Engineering Principles
 
 > **Design for change. Measure performance. Protect boundaries. Keep business rules explicit.**
 
@@ -132,7 +141,7 @@ I prefer systems that are:
 
 ---
 
-## Current Focus
+## `09` Current Direction
 
 - Deepening **backend architecture, distributed systems, databases, cloud, and system design**.
 - Developing a second specialization in **Machine Learning / AI Engineering**.
