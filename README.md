@@ -50,32 +50,20 @@ I graduated in **2024** from **Cairo University — Faculty of Computers and Art
 
 ---
 
-## Engineering Stories
+## Selected Engineering Work
+
+### Enterprise CAFM Platform
+End-to-end engineering across operational modules including assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
 
 ### Document Management · Direct-to-S3
-**Angular → .NET validation → pre-signed URL → S3 → confirm + persist**
+**Angular → .NET validation → pre-signed URL → direct S3 upload → confirm + persist**
 
-Large files upload directly to S3 while the backend keeps authorization, metadata rules, and lifecycle control.
+Large file bytes upload directly to S3 while the backend retains authorization, metadata validation, and lifecycle control.
 
 ### Multi-Tenant Performance
-**~60 seconds → under 2 seconds**
+Redesigned a high-cost B2B checkout path with async refactoring, Redis caching, and query batching.
 
-Async refactoring · Redis caching · SQL/query batching · tenant-isolated audit logging with MediatR pipeline behaviors.
-
-### Enterprise CAFM
-End-to-end work across assets, PPM, work orders, attendance, access control, purchasing, materials, vendors, visitors, spare parts, and document management.
-
----
-
-## Public Code
-
-| Repository | Focus |
-|---|---|
-| **[Maintainify ↗](https://github.com/AhmedShahine1/Maintainify)** | Public project available for direct source review |
-| **[Backend Assessment ↗](https://github.com/AhmedShahine1/BackEndDevTest)** | .NET · EF Core · SQL Server · SignalR · Angular |
-| **[System Design ↗](https://github.com/AhmedShahine1/system-design-resources)** | Architecture and system-design resources |
-
-> Most production work belongs to employer/private repositories. The stories above describe the engineering without exposing proprietary source code.
+**Result:** roughly **60 seconds → under 2 seconds**, with **45% lower p95 latency** while sustaining **3× concurrent load**.
 
 ---
 
@@ -118,7 +106,7 @@ I prefer systems that are:
 
 ---
 
-## Current Direction
+## Education & Growth
 
 - Deepening **backend architecture, distributed systems, databases, cloud, and system design**.
 - Developing a second specialization in **Machine Learning / AI Engineering**.
